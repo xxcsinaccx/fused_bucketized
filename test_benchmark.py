@@ -1,4 +1,12 @@
 import subprocess
-commands = "./applications_fused_bucketized"
+commands = [
+    "make",
+    "./applications_fused_bucketized",
+]
 workdir = "/fused_bucketized"
-result = subprocess.run(commands, shell=True, cwd=workdir)
+for cmd in commands:
+    print(f"running: {cmd}")
+    result = subprocess.run(cmd, shell=True, cwd=workdir)
+    if result.returncode != 0:
+        print(f"fail: {cmd}")
+        break
