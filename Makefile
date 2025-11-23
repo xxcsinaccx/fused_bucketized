@@ -4,7 +4,7 @@
 HIPCC = hipcc
 
 # Source and target
-SRC = fused_bucketized_test.hip
+SRC = origin.hip
 TARGET = applications_fused_bucketized
 
 # Compiler flags
